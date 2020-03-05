@@ -1,6 +1,6 @@
 Name:           pmu-tools
-Version:        108
-Release:        3%{?dist}
+Version:        109
+Release:        1%{?dist}
 Summary:        Intel PMU profiling tools
 
 License:        GPLv2 and BSD
