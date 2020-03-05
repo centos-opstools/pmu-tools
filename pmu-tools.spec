@@ -1,12 +1,12 @@
 Name:           pmu-tools
-Version:        108
-Release:        3%{?dist}
+Version:        109
+Release:        1%{?dist}
 Summary:        Intel PMU profiling tools
 
 License:        GPLv2 and BSD
 # jevents subdir is BSD licensed
 URL:            https://github.com/andikleen/pmu-tools
-Source0:        https://github.com/andikleen/%{name}/archive/r%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source0:        https://github.com/andikleen/%{name}/archive/r%{version}.tar.gz
 
 # pmu-data is BSD licensed, see
 # https://download.01.org/perfmon/readme.txt
