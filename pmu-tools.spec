@@ -1,6 +1,6 @@
 Name:           pmu-tools
 Version:        109
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Intel PMU profiling tools
 
 License:        GPLv2 and BSD
@@ -10,7 +10,9 @@ Source0:        https://github.com/andikleen/%{name}/archive/r%{version}.tar.gz#
 
 # pmu-data is BSD licensed, see
 # https://download.01.org/perfmon/readme.txt
-Source1:        https://download.01.org/perfmon/perfmon_server_events_v1.0.zip
+Source1:        https://download.01.org/perfmon/perfmon_server_events_v1.3.zip
+# non-versioned(!) mapping file to map server events to cpu generations
+Source2:        https://download.01.org/perfmon/mapfile.csv
 
 ExclusiveArch:  x86_64
 
@@ -68,9 +70,10 @@ pushd jevents
 %make_install
 popd
 
-pushd perfmon_server_events_v1.0
+pushd perfmon_server_events_v1.3
 mkdir -p %{buildroot}%{_datadir}/perfmon
 cp -r * %{buildroot}%{_datadir}/perfmon
+cp %SOURCE2 %{buildroot}%{_datadir}/perfmon
 popd
 
 %files
@@ -98,6 +101,10 @@ popd
 
 
 %changelog
+* Fri Jun 26 2020 Matthias Runge <mrunge@redhat.com> - 109-2
+- add the mapping file mapping.csv
+- bump server events to version 1.3
+
 * Thu Jun 06 2019 Matthias Runge <mrunge@redhat.com> - 108-4
 - add pmu-data to pmu-tools, required for collectd-pmu
 
