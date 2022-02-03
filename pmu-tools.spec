@@ -1,6 +1,6 @@
 Name:           pmu-tools
 Version:        109
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Intel PMU profiling tools
 
 License:        GPLv2 and BSD
@@ -101,6 +101,9 @@ popd
 
 
 %changelog
+* Thu Feb 03 2022 Emma Foley <efoley@redhat.com> - 109-3
+- Bump release to trigger builds on CentOS Stream 8 & 9
+
 * Fri Jun 26 2020 Matthias Runge <mrunge@redhat.com> - 109-2
 - add the mapping file mapping.csv
 - bump server events to version 1.3
